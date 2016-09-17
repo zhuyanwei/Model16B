@@ -6,22 +6,19 @@
 % load('XTestWBC.mat');
 % load('yTestWBC.mat');
 
-%total 1000 samples,use k(k=0~100)percet for testing and (100-k) for training
-K = 10;
+%get the training(testing) data and training result
+XTrain = xTrain(:,2:1:end);
+YTrain = xTrain(:,1);
+XTest = xTest(:,2:1:end);
+YTest = xTest(:,1);
 
-xData = presetGenotype;
-yData = load('phenotype.txt');
-xyData = [yData,xData];
-n = (100 - K) * 1000;
-
-XTrain = presetGenotype;
-yTrain = load('phenotype.txt');
-
-[nsamples, nfeatures] = size(XTrain)
+[nsamples, nfeatures] = size(XTrain);
 w0 = rand(nfeatures + 1, 1);
-weight = logisticW( XTrain, yTrain, w0, 2000, 0.1);
-res = logisticRegressionClassify( XTest, weight );
+w = logisticW( XTrain, YTrain, w0, 500, 0.01);
+%output w
+disp(w);
+res = logisticClassify( XTest, w );
 
-errors = abs(yTest - res);
-err = sum(errors)
+errors = abs(YTest - res);
+err = sum(errors);
 percentage = 1 - err / size(XTest, 1)
