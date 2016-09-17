@@ -5,13 +5,13 @@ clear all;
 clc;
 %define the threshold and get the pre-set number of SNPs
 %and get 1000 x presetNum data
-THRESHOLD = 4000;
+THRESHOLD = 1500;
 presetNum = 0;
 %define the hist group number
 histGroups = 2000;
 
 % load the coded numerical SNPs
-load D:\0J_D_WorkSpace\MatlabSpace\Model16B\Project1\genotype.txt;
+load genotype.txt;
 
 notID = zeros(15, 9445);
 isID = zeros(15,9445);
