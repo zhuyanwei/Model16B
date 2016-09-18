@@ -1,7 +1,7 @@
 %output1: the hist map of all 9445 sumDist
 %output2: presetGenotype(1000, presetNum)
-close all;
-clear all;
+% close all;
+% clear all;
 clc;
 %define the threshold and get the pre-set number of SNPs
 %and get 1000 x presetNum data
@@ -11,7 +11,10 @@ presetNum = 0;
 histGroups = 2000;
 
 % load the coded numerical SNPs
-load genotype.txt;
+% load genotype.txt;
+% we had generate the trans data ,and substitute the orig genotype.dat
+load trans.mat
+genotype = trans;
 
 notID = zeros(15, 9445);
 isID = zeros(15,9445);
@@ -59,4 +62,4 @@ for i=1:1:presetNum
 end
 
 %......................clean workspace
-clear M N X Y i j SNPsSum dist genotype histGroups isID notID sumDist;
+clear M N X Y i j SNPsSum dist  histGroups isID notID sumDist;
