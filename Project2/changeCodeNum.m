@@ -70,7 +70,7 @@ for i=1:1:9445
                 otherwise
                     err(j,i)=orig(j,i);
             end
-        else diffNum(1, i)==11  % CG
+        else diffNum(1, i)==11 % CG
             switch(orig(j, i))
                 case 10               % CC
                     trans(j, i) = 0;

@@ -5,7 +5,11 @@
 % load('yTrainWBC.mat');
 % load('XTestWBC.mat');
 % load('yTestWBC.mat');
-
+%....................................
+% first run getHist %
+% second run init_data
+% third main
+%....................................
 %get the training(testing) data and training result
 XTrain = xTrain(:,2:1:end);
 YTrain = xTrain(:,1);
