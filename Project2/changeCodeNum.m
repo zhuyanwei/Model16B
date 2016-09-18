@@ -1,4 +1,5 @@
-
+% change code num
+% AA=0 Aa=1 aa=2
 orig  = genotype;
 trans = zeros(1000, 9445);
 err = ones( 1000, 9445) * -1;
@@ -17,66 +18,66 @@ for i=1:1:9445
         if diffNum(1, i)==1     % AT
             switch(orig(j, i))
                 case 0               % AA
-                    trans(j, i) = 1;
+                    trans(j, i) = 0;
                 case 5               % TT
                     trans(j, i) = 2;
                 case 1               % AT TA
-                    trans(j, i) = 3;
+                    trans(j, i) = 1;
                 otherwise
                     err(j,i)=orig(j,i);
             end
         elseif diffNum(1, i)==2  % AC
             switch(orig(j, i))
                 case 0                % AA
-                    trans(j, i) = 1;
+                    trans(j, i) = 0;
                 case 10               % CC
                     trans(j, i) = 2;
                 case 2                % AC CA
-                    trans(j, i) = 3;
+                    trans(j, i) = 1;
                 otherwise
                     err(j,i)=orig(j,i);
             end
         elseif diffNum(1, i)==3  % AG
             switch(orig(j, i))
                 case 0               % AA
-                    trans(j, i) = 1;
+                    trans(j, i) = 0;
                 case 15              % GG
                     trans(j, i) = 2;
                 case 3               % AG GA
-                    trans(j, i) = 3;
+                    trans(j, i) = 1;
                 otherwise
                     err(j,i)=orig(j,i);
             end
         elseif diffNum(1, i)==6  % TC
             switch(orig(j, i))
                 case 5               % TT
-                    trans(j, i) = 1;
+                    trans(j, i) = 0;
                 case 10              % CC
                     trans(j, i) = 2;
                 case 6               % TC CT
-                    trans(j, i) = 3;
+                    trans(j, i) = 1;
                 otherwise
                     err(j,i)=orig(j,i);
             end
         elseif diffNum(1, i)==7  % TG
             switch(orig(j, i))
                 case 5               % TT
-                    trans(j, i) = 1;
+                    trans(j, i) = 0;
                 case 15              % GG
                     trans(j, i) = 2;
                 case 7               % TG GT
-                    trans(j, i) = 3;
+                    trans(j, i) = 1;
                 otherwise
                     err(j,i)=orig(j,i);
             end
         else diffNum(1, i)==11  % CG
             switch(orig(j, i))
                 case 10               % CC
-                    trans(j, i) = 1;
+                    trans(j, i) = 0;
                 case 15               % GG
                     trans(j, i) = 2;
                 case 11               % CG GC
-                    trans(j, i) = 3;
+                    trans(j, i) = 1;
                 otherwise
                     err(j,i)=orig(j,i);
             end
