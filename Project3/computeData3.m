@@ -1,10 +1,13 @@
 %
 % output: transMat3(9445, 300) 
+% output: presetGenoInfo(1000, 300)
 % calculate the transformMatric for problem 3
 %
 transMat3 = zeros(9445, 300);
+
 load SNPsNum.txt;  
 load SqSNPsOrderW.mat;
+load trans.mat;
 gene_info = zeros(9445, 300);
 
 start = 1;
@@ -28,5 +31,7 @@ for i=1:1:300
     end
 end
 disp(total_nonzero);
+
+presetGenoInfo = trans * transMat3;
 
 clear i j start next;

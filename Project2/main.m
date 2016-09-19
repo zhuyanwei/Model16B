@@ -13,7 +13,7 @@ YTest = xTest(:,1);
 
 [nsamples, nfeatures] = size(XTrain);
 w0 = rand(nfeatures + 1, 1);
-w = logisticW( XTrain, YTrain, w0, 500, 0.01);
+w = logisticW( XTrain, YTrain, w0, 10000, 0.01);
 %output w
 disp(w);
 res = logisticClassify( XTest, w );
