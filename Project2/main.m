@@ -1,15 +1,10 @@
 %main script
-% clear all; close all; clc;
-% 
-% load('XTrainWBC.mat');
-% load('yTrainWBC.mat');
-% load('XTestWBC.mat');
-% load('yTestWBC.mat');
-%....................................
-% first run getHist %
-% second run init_data
-% third main
-%....................................
+% output:  get the weighted martic w(presetNum, 1)
+%....................................%
+% first,    run getHist.m --->may be set the Threshold to get the preset SNPs num for train or test, less than train num 
+% second,   run init_data.m --->get the xTrain and xTest data for logisticW
+% third,    main.m
+%....................................%
 %get the training(testing) data and training result
 XTrain = xTrain(:,2:1:end);
 YTrain = xTrain(:,1);
