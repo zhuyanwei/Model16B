@@ -5,7 +5,7 @@ clear all;
 clc;
 %define the threshold and get the pre-set number of SNPs
 %and get 1000 x presetNum data
-THRESHOLD = 2000;
+THRESHOLD = 1600;
 presetNum = 0;
 %define the hist group number
 histGroups = 2000;
