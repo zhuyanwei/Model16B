@@ -1,3 +1,5 @@
+%
+%output: xTrain and xTest data for our cluster
 %total 1000 samples,use k(k=0~100)percet for testing and (100-k) for training
 K = 20;
 
