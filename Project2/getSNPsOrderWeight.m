@@ -33,5 +33,6 @@ end
 sortedSq_W = zeros(9445, 2);
 [sortedSq_W(1:1:9445, 2), sortedSq_W(1:1:9445, 1)] = sort(SqSNPsOrderW(1:1:9445, 1), 'descend');
 
+hist( sortedSq_W(1:1:presetNum, 2)', 10);
 % clear tmp var
 clear i tmpW m n sortedIdx;

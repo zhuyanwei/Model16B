@@ -1,19 +1,20 @@
+% function [presetGenotype] = getHist( Threshold_set )
 %output1: the hist map of all 9445 sumDist
 %output2: presetGenotype(1000, presetNum)
-close all;
-clear all;
-clc;
+% close all;
+% clear all;
+% clc;
 %define the threshold and get the pre-set number of SNPs
 %and get 1000 x presetNum data
-THRESHOLD = 1600;
+THRESHOLD = Threshold_set;
 presetNum = 0;
 %define the hist group number
 histGroups = 2000;
 
 % load the coded numerical SNPs
-% first, need load this file to generate genotype.mat 
-% then run changeCodeNum.m to generate trans.mat and save it. 
-% load genotype.txt;  
+% first, need load this file to generate genotype.mat
+% then run changeCodeNum.m to generate trans.mat and save it.
+% load genotype.txt;
 
 % we had generate the trans data ,and substitute the orig genotype.dat
 load trans.mat
@@ -44,13 +45,13 @@ for i=1:1:9445
     end
 end
 
-% plot hist 
+% plot hist
 % hist(sumDist, histGroups);
 
 SNPsSum = zeros(2, 9445);
 for i=1:1:9445
     SNPsSum(1,i) = i;
-    SNPsSum(2,i) = sumDist(1, i); 
+    SNPsSum(2,i) = sumDist(1, i);
 end
 
 sortedSNPsSum = zeros(2, 9445);
@@ -66,3 +67,4 @@ end
 
 %......................clean workspace
 clear M N X Y i j SNPsSum dist  histGroups isID notID;
+% end

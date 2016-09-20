@@ -25,4 +25,4 @@ myWX2 = myWX .* myWX;
 sortMyWX2 = sort(myWX2(1:1:300, 1), 'descend');
 
 %..............................clear
-clear XTrain YTrain XTest YTest  i ;
+clear XTrain YTrain XTest YTest i ;
