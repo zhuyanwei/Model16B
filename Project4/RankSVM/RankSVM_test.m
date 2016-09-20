@@ -61,7 +61,7 @@ if(strcmp(svm.type,'RBF'))
     for i=1:num_testing
         for j=1:num_training
             gamma=svm.para;
-            kernel(i,j)=exp(-gamma*sum((test_data(i,:)'-SVs(:,j)).^2))
+            kernel(i,j)=exp(-gamma*sum((test_data(i,:)'-SVs(:,j)).^2));
         end
     end
 else
